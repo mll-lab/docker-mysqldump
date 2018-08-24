@@ -16,17 +16,17 @@ And mount your backup volume into the container at `/backup`.
 ## How does it work?
 
 On start the container runs `mysqldump` with the given env variables.
-The result is named with the current timestamp and stored under `/backup`.
+The result is named with the current timestamp and stored under `/backup/`.
 
 ## Example
 
 Run this as a one-off docker command
 
-````bash
+```bash
 docker run --env MYSQL_HOST=1.2.3.4 \
            --env MYSQL_USER=root \
            --env MYSQL_PASSWORD=password \
            --env MYSQL_DATABASE=foobarbaz \
            --volume ${PWD}:/backup \
            mlllab/mysqldump
-````
+```
